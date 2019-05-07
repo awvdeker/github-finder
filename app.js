@@ -13,4 +13,13 @@ profileCall(e.target.value).then( data => {
   console.log(data);
   buildProfile(data);
 })
+
+repoCall(e.target.value).then(repoData =>{
+  console.log(repoData);
+  buildRepos(repoData);
+
+})
+
 });
+
+
