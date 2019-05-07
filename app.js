@@ -6,6 +6,11 @@
  */
 //Simple startup code
 const searchUser = document.getElementById('searchUser');
-searchUser.addEventListener('keyup', (e)=>{
+searchUser.addEventListener ('keyup', (e)=>{
   //get the value of the input text and have fun
+
+profileCall(e.target.value).then( data => {
+  console.log(data);
+  buildProfile(data);
 })
+});
