@@ -8,5 +8,16 @@ async function profileCall(userName){
 var clientId = "373e25d1625298fcc5f5";
 var clientSecret = "24b6a5971383c1ccb3d6ec08a2baa38bcb22f7c4";
 
+async function repoCall(userName){
+  let repoResult = await fetch(`https://api.github.com/users/${userName}/repos?per_page=${perPage}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`);
+  let repoData = await repoResult.json();
+
+  return repoData;
+}
+
+
+var perPage = 5;
+var sort = "created: asc";
+
 // user information => https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}
 // user repo => https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.client_id}&client_secret=${this.client_secret}
