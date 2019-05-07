@@ -8,4 +8,7 @@
 const searchUser = document.getElementById('searchUser');
 searchUser.addEventListener('keyup', (e)=>{
   //get the value of the input text and have fun
-})
+  console.log(e.target.value);
+  profileCall(e.target.value).then( data => console.log(data));
+
+});
